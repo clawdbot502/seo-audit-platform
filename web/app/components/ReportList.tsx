@@ -10,13 +10,15 @@ interface Report {
   timestamp: string;
 }
 
+interface AuditStatus {
+  isRunning: boolean;
+  status: string;
+}
+
 export default function ReportList() {
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchReports();
-  }, []);
+  const [previousStatus, setPreviousStatus] = useState<string | null>(null);
 
   const fetchReports = async () => {
     try {
@@ -29,6 +31,32 @@ export default function ReportList() {
       setLoading(false);
     }
   };
+
+  const checkStatusAndRefresh = async () => {
+    try {
+      const response = await fetch('/api/audit-status');
+      if (response.ok) {
+        const status: AuditStatus = await response.json();
+
+        // 如果之前是运行中，现在完成了，则刷新报告列表
+        if (previousStatus === 'in_progress' && !status.isRunning) {
+          fetchReports();
+        }
+
+        setPreviousStatus(status.isRunning ? 'in_progress' : 'completed');
+      }
+    } catch (error) {
+      console.error('Failed to check status:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchReports();
+
+    // 每 10 秒检查一次状态
+    const interval = setInterval(checkStatusAndRefresh, 10000);
+    return () => clearInterval(interval);
+  }, [previousStatus]);
 
   if (loading) {
     return (
