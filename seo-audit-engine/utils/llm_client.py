@@ -40,7 +40,9 @@ class LLMClient:
                 ],
                 "temperature": temperature,
                 "max_tokens": max_tokens,
-                "api_key": self.api_key
+                "api_key": self.api_key,
+                # 对于自定义 base_url，使用 custom_llm_provider
+                "custom_llm_provider": "openai" if self.base_url else None
             }
             
             # 如果有 base_url，添加到参数中
