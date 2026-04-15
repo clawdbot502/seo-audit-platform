@@ -1,8 +1,8 @@
 """
-配置文件：管理多模型支持和环境变量
+配置文件：支持多个 AI 模型提供商
 """
 import os
-from typing import Dict, Tuple
+from typing import Tuple
 
 MODEL_CONFIGS = {
     "openai": {
@@ -22,18 +22,18 @@ MODEL_CONFIGS = {
         "api_key_env": "DEEPSEEK_API_KEY"
     },
     "kimi": {
-        "model": "openai/K2.6-code-preview",
+        "model": "moonshot-v1-auto",
         "api_key_env": "KIMI_API_KEY",
-        "base_url": "https://api.kimi.com/coding/"
+        "base_url": "https://api.moonshot.cn/v1"
     }
 }
 
-def get_model_config() -> Tuple[str, str]:
+def get_model_config() -> Tuple[str, str, str]:
     """
     获取当前配置的模型和 API key
 
     Returns:
-        Tuple[str, str]: (model_name, api_key)
+        Tuple[str, str, str]: (model_name, api_key, base_url)
 
     Raises:
         ValueError: 如果提供商未知或 API key 缺失
@@ -54,12 +54,12 @@ def get_model_config() -> Tuple[str, str]:
     if not api_key:
         raise ValueError(f"Missing API key: API_KEY or {config['api_key_env']}")
 
-    # 如果配置中有 base_url，设置环境变量供 litellm 使用
-    if "base_url" in config:
-        base_url = os.getenv("BASE_URL") or config["base_url"]
-        os.environ["OPENAI_API_BASE"] = base_url
+    # 获取 base_url（如果有）
+    base_url = os.getenv("BASE_URL") or config.get("base_url", "")
+
+    if base_url:
         print(f"✓ Using model: {config['model']} (provider: {provider}, base_url: {base_url})")
     else:
         print(f"✓ Using model: {config['model']} (provider: {provider})")
 
-    return config["model"], api_key
+    return config["model"], api_key, base_url
