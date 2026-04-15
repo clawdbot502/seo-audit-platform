@@ -20,6 +20,11 @@ MODEL_CONFIGS = {
     "deepseek": {
         "model": "deepseek/deepseek-chat",
         "api_key_env": "DEEPSEEK_API_KEY"
+    },
+    "kimi": {
+        "model": "openai/K2.6-code-preview",
+        "api_key_env": "KIMI_API_KEY",
+        "base_url": "https://api.kimi.com/coding/"
     }
 }
 
@@ -49,5 +54,12 @@ def get_model_config() -> Tuple[str, str]:
     if not api_key:
         raise ValueError(f"Missing API key: API_KEY or {config['api_key_env']}")
 
-    print(f"✓ Using model: {config['model']} (provider: {provider})")
+    # 如果配置中有 base_url，设置环境变量供 litellm 使用
+    if "base_url" in config:
+        base_url = os.getenv("BASE_URL") or config["base_url"]
+        os.environ["OPENAI_API_BASE"] = base_url
+        print(f"✓ Using model: {config['model']} (provider: {provider}, base_url: {base_url})")
+    else:
+        print(f"✓ Using model: {config['model']} (provider: {provider})")
+
     return config["model"], api_key
