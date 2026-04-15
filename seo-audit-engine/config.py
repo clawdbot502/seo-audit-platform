@@ -22,9 +22,9 @@ MODEL_CONFIGS = {
         "api_key_env": "DEEPSEEK_API_KEY"
     },
     "kimi": {
-        "model": "moonshot-v1-auto",
+        "model": "K2.6-code-preview",
         "api_key_env": "KIMI_API_KEY",
-        "base_url": "https://api.moonshot.cn/v1"
+        "base_url": "https://api.kimi.com/coding/"
     }
 }
 
