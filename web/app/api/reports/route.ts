@@ -40,30 +40,69 @@ export async function GET() {
     const files = await response.json();
 
     // 过滤 HTML 文件并解析信息
-    const reports = files
+    const reportsMap = new Map<string, any[]>();
+
+    files
       .filter((file: any) => file.name.endsWith('.html'))
-      .map((file: any) => {
+      .forEach((file: any) => {
         // 解析文件名：seo-audit-{domain}-{timestamp}.html
         const match = file.name.match(/seo-audit-(.+)-(\d{8}-\d{6})\.html/);
 
-        let url = '';
-        let timestamp = '';
-
         if (match) {
-          url = match[1];
+          const urlPart = match[1];
           const dateStr = match[2];
-          // 格式化时间戳：20260415-123456 -> 2026-04-15 12:34:56
-          timestamp = `${dateStr.slice(0, 4)}-${dateStr.slice(4, 6)}-${dateStr.slice(6, 8)} ${dateStr.slice(9, 11)}:${dateStr.slice(11, 13)}:${dateStr.slice(13, 15)}`;
-        }
+          
+          // 格式化时间戳：20260415-123456 -> 2026-04-15 12:34:56 (UTC)
+          const year = dateStr.slice(0, 4);
+          const month = dateStr.slice(4, 6);
+          const day = dateStr.slice(6, 8);
+          const hour = dateStr.slice(9, 11);
+          const minute = dateStr.slice(11, 13);
+          const second = dateStr.slice(13, 15);
+          
+          // 创建 UTC 时间并转换为上海时间 (UTC+8)
+          const utcDate = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}Z`);
+          const shanghaiDate = new Date(utcDate.getTime() + 8 * 60 * 60 * 1000);
+          
+          const timestamp = shanghaiDate.toISOString().slice(0, 19).replace('T', ' ');
 
-        return {
-          name: file.name,
-          path: file.path,
-          url: url || file.name,
-          timestamp: timestamp || '未知时间',
-        };
-      })
-      .sort((a: any, b: any) => b.timestamp.localeCompare(a.timestamp)); // 按时间倒序
+          // 按 URL 分组
+          if (!reportsMap.has(urlPart)) {
+            reportsMap.set(urlPart, []);
+          }
+
+          reportsMap.get(urlPart)!.push({
+            name: file.name,
+            path: file.path,
+            urlPart,
+            timestamp,
+            sortKey: dateStr,
+          });
+        }
+      });
+
+    // 为每个 URL 的报告添加版本号
+    const reports: any[] = [];
+    
+    reportsMap.forEach((urlReports, urlPart) => {
+      // 按时间倒序排序
+      urlReports.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
+      
+      // 添加版本号
+      urlReports.forEach((report, index) => {
+        const version = urlReports.length > 1 ? ` V${urlReports.length - index}` : '';
+        reports.push({
+          name: report.name,
+          path: report.path,
+          url: urlPart + version,
+          timestamp: report.timestamp,
+          sortKey: report.sortKey,
+        });
+      });
+    });
+
+    // 全局按时间倒序排序
+    reports.sort((a, b) => b.sortKey.localeCompare(a.sortKey));
 
     return NextResponse.json({ reports });
 
