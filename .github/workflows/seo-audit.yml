@@ -32,6 +32,7 @@ jobs:
         env:
           MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER }}
           API_KEY: ${{ secrets.API_KEY }}
+          BASE_URL: ${{ secrets.BASE_URL }}
         run: |
           cd seo-audit-engine
           python main.py "${{ github.event.inputs.target_url }}"
