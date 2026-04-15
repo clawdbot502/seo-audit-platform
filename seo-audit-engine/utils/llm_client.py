@@ -12,13 +12,19 @@ class LLMClient:
         self.model, self.api_key = get_model_config()
         # 设置 API key 到环境变量（LiteLLM 会自动读取）
         import os
-        config_key_env = None
-        for provider, config in __import__('config').MODEL_CONFIGS.items():
-            if config["model"] == self.model:
-                config_key_env = config["api_key_env"]
-                break
-        if config_key_env:
-            os.environ[config_key_env] = self.api_key
+        
+        # 对于使用 openai/ 前缀的模型（如 Kimi），需要设置 OPENAI_API_KEY
+        if self.model.startswith('openai/'):
+            os.environ['OPENAI_API_KEY'] = self.api_key
+        else:
+            # 其他模型使用各自的环境变量
+            config_key_env = None
+            for provider, config in __import__('config').MODEL_CONFIGS.items():
+                if config["model"] == self.model:
+                    config_key_env = config["api_key_env"]
+                    break
+            if config_key_env:
+                os.environ[config_key_env] = self.api_key
 
     def call(
         self,
