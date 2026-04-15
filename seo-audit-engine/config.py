@@ -1,0 +1,51 @@
+"""
+配置文件：管理多模型支持和环境变量
+"""
+import os
+from typing import Dict, Tuple
+
+MODEL_CONFIGS = {
+    "openai": {
+        "model": "gpt-4-turbo-preview",
+        "api_key_env": "OPENAI_API_KEY"
+    },
+    "anthropic": {
+        "model": "claude-3-opus-20240229",
+        "api_key_env": "ANTHROPIC_API_KEY"
+    },
+    "google": {
+        "model": "gemini/gemini-pro",
+        "api_key_env": "GOOGLE_API_KEY"
+    },
+    "deepseek": {
+        "model": "deepseek/deepseek-chat",
+        "api_key_env": "DEEPSEEK_API_KEY"
+    }
+}
+
+def get_model_config() -> Tuple[str, str]:
+    """
+    获取当前配置的模型和 API key
+
+    Returns:
+        Tuple[str, str]: (model_name, api_key)
+
+    Raises:
+        ValueError: 如果提供商未知或 API key 缺失
+    """
+    provider = os.getenv("MODEL_PROVIDER", "openai")
+
+    if provider not in MODEL_CONFIGS:
+        raise ValueError(
+            f"Unknown provider: {provider}. "
+            f"Available: {', '.join(MODEL_CONFIGS.keys())}"
+        )
+
+    config = MODEL_CONFIGS[provider]
+    api_key = os.getenv(config["api_key_env"])
+
+    if not api_key:
+        raise ValueError(f"Missing API key: {config['api_key_env']}")
+
+    print(f"✓ Using model: {config['model']} (provider: {provider})")
+    return config["model"], api_key
