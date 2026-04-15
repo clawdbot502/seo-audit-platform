@@ -29,10 +29,7 @@ jobs:
       - name: Run SEO audit
         env:
           MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           cd seo-audit-engine
           python main.py "${{ github.event.inputs.target_url }}"

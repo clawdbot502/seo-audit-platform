@@ -42,10 +42,12 @@ def get_model_config() -> Tuple[str, str]:
         )
 
     config = MODEL_CONFIGS[provider]
-    api_key = os.getenv(config["api_key_env"])
+
+    # 优先使用通用 API_KEY，其次使用特定的 API key
+    api_key = os.getenv("API_KEY") or os.getenv(config["api_key_env"])
 
     if not api_key:
-        raise ValueError(f"Missing API key: {config['api_key_env']}")
+        raise ValueError(f"Missing API key: API_KEY or {config['api_key_env']}")
 
     print(f"✓ Using model: {config['model']} (provider: {provider})")
     return config["model"], api_key
