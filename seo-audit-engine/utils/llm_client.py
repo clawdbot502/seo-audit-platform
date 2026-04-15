@@ -9,22 +9,7 @@ class LLMClient:
     """统一的 LLM 调用客户端，支持多个 AI 模型提供商"""
 
     def __init__(self):
-        self.model, self.api_key = get_model_config()
-        # 设置 API key 到环境变量（LiteLLM 会自动读取）
-        import os
-        
-        # 对于使用 openai/ 前缀的模型（如 Kimi），需要设置 OPENAI_API_KEY
-        if self.model.startswith('openai/'):
-            os.environ['OPENAI_API_KEY'] = self.api_key
-        else:
-            # 其他模型使用各自的环境变量
-            config_key_env = None
-            for provider, config in __import__('config').MODEL_CONFIGS.items():
-                if config["model"] == self.model:
-                    config_key_env = config["api_key_env"]
-                    break
-            if config_key_env:
-                os.environ[config_key_env] = self.api_key
+        self.model, self.api_key, self.base_url = get_model_config()
 
     def call(
         self,
@@ -46,15 +31,23 @@ class LLMClient:
             str: LLM 生成的响应文本
         """
         try:
-            response = litellm.completion(
-                model=self.model,
-                messages=[
+            # 构建调用参数
+            params = {
+                "model": self.model,
+                "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=temperature,
-                max_tokens=max_tokens
-            )
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+                "api_key": self.api_key
+            }
+            
+            # 如果有 base_url，添加到参数中
+            if self.base_url:
+                params["api_base"] = self.base_url
+            
+            response = litellm.completion(**params)
             return response.choices[0].message.content
         except Exception as e:
             print(f"❌ LLM call failed: {e}")
