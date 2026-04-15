@@ -5,10 +5,8 @@ export default async function ReportPage({
 }) {
   const { name } = await params;
 
-  // 构建报告的原始 URL（从 GitHub 仓库获取）
-  const repoOwner = process.env.REPO_OWNER || 'clawdbot502';
-  const repoName = process.env.REPO_NAME || 'seo-audit-platform';
-  const reportUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/seo-audit-engine/reports/${name}`;
+  // 通过 API 代理获取报告内容
+  const reportUrl = `/api/report-content/${name}`;
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -26,7 +24,7 @@ export default async function ReportPage({
           </h1>
         </div>
 
-        {/* Report iframe */}
+        {/* Report iframe using API proxy */}
         <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
           <iframe
             src={reportUrl}
