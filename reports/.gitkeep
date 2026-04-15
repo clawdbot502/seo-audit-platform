@@ -1,0 +1,5 @@
+# 审计报告目录
+
+此目录用于存储自动生成的 SEO 审计报告。
+
+报告文件命名格式：`seo-audit-{domain}-{timestamp}.html`
