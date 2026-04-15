@@ -33,6 +33,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // 检查是否有正在运行的审计任务
+    const statusResponse = await fetch(
+      `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/seo-audit.yml/runs?per_page=1`,
+      {
+        headers: {
+          'Authorization': `Bearer ${githubToken}`,
+          'Accept': 'application/vnd.github+json',
+        },
+      }
+    );
+
+    if (statusResponse.ok) {
+      const statusData = await statusResponse.json();
+      const latestRun = statusData.workflow_runs?.[0];
+
+      if (latestRun && (latestRun.status === 'in_progress' || latestRun.status === 'queued')) {
+        return NextResponse.json(
+          { error: '已有审计任务正在进行中，请等待完成后再试' },
+          { status: 409 }
+        );
+      }
+    }
+
     // 触发 GitHub Actions workflow
     const response = await fetch(
       `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/seo-audit.yml/dispatches`,
