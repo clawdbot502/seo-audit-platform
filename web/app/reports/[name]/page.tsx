@@ -8,7 +8,7 @@ export default async function ReportPage({
   // 构建报告的原始 URL（从 GitHub 仓库获取）
   const repoOwner = process.env.REPO_OWNER || 'clawdbot502';
   const repoName = process.env.REPO_NAME || 'seo-audit-platform';
-  const reportUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/reports/${name}`;
+  const reportUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/seo-audit-engine/reports/${name}`;
 
   return (
     <div className="min-h-screen bg-slate-900">
