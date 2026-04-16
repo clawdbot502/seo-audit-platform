@@ -10,7 +10,7 @@ export async function GET(
     const repoName = process.env.REPO_NAME || 'seo-audit-platform';
     
     // 直接从 GitHub raw 获取 HTML 内容
-    const reportUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/seo-audit-engine/reports/${name}`;
+    const reportUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/reports/${name}`;
     
     const response = await fetch(reportUrl, {
       cache: 'no-store',
