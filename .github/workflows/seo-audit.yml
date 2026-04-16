@@ -30,9 +30,23 @@ jobs:
 
       - name: Run SEO audit
         env:
-          MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER }}
+          # 灵活模式（推荐）
+          MODEL_NAME: ${{ secrets.MODEL_NAME }}
           API_KEY: ${{ secrets.API_KEY }}
           BASE_URL: ${{ secrets.BASE_URL }}
+          FALLBACK_MODELS: ${{ secrets.FALLBACK_MODELS }}
+          # 兼容模式
+          MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_BASE_URL: ${{ secrets.GOOGLE_BASE_URL }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ secrets.DEEPSEEK_BASE_URL }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          KIMI_BASE_URL: ${{ secrets.KIMI_BASE_URL }}
         run: |
           cd seo-audit-engine
           python main.py "${{ github.event.inputs.target_url }}"
@@ -41,6 +55,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add seo-audit-engine/reports/
+          git add reports/
           git commit -m "Add SEO audit report for ${{ github.event.inputs.target_url }}" || echo "No changes to commit"
           git push

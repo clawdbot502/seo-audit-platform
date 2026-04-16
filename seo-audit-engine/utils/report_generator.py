@@ -24,10 +24,10 @@ def generate_html_report(url: str, audit_data: Dict) -> str:
     domain = parsed_url.netloc.replace('www.', '')
     timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
     filename = f"seo-audit-{domain}-{timestamp}.html"
-    filepath = os.path.join('reports', filename)
+    filepath = os.path.join('..', 'reports', filename)
 
-    # 确保 reports 目录存在
-    os.makedirs('reports', exist_ok=True)
+    # 确保 reports 目录存在（仓库根目录的 reports/）
+    os.makedirs(os.path.join('..', 'reports'), exist_ok=True)
 
     # 生成 HTML 内容
     html_content = generate_html_template(url, audit_data)
