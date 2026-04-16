@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO 审计报告 - https://aistore.club/zh/channels</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 24px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 { color: #38bdf8; margin-bottom: 12px; font-size: 1.4em; }
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .meta-card {
+            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+        }
+        .summary {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 18px 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.2em; font-weight: bold; color: #38bdf8; }
+        .score-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .score-number {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .issue-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border-left: 5px solid;
+        }
+        .issue-card.critical { border-left-color: #f87171; }
+        .issue-card.high { border-left-color: #fbbf24; }
+        .issue-card.medium { border-left-color: #facc15; }
+        .issue-card.low { border-left-color: #60a5fa; }
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .issue-title { font-size: 1.2em; flex: 1; color: #f8fafc; }
+        .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-priority { background: #f87171; color: #fff; }
+        .badge-priority.high { background: #fbbf24; color: #0f172a; }
+        .badge-priority.medium { background: #facc15; color: #0f172a; }
+        .badge-priority.low { background: #60a5fa; color: #fff; }
+        .badge-category { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); }
+        .issue-section { margin: 14px 0; }
+        .issue-section h4 { color: #38bdf8; margin-bottom: 6px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .issue-section p { color: #cbd5e1; line-height: 1.7; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.5;
+            font-size: 0.85em;
+            padding: 16px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 1.6em; }
+            .issue-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SEO 审计报告</h1>
+            <p style="opacity:0.8">自动化 SEO 审计平台</p>
+            <div class="meta-info">
+                <div class="meta-card"><strong>URL:</strong><br>https://aistore.club/zh/channels</div>
+                <div class="meta-card"><strong>审计时间:</strong><br>2026-04-16 03:36</div>
+                <div class="meta-card"><strong>发现问题:</strong><br>14</div>
+                <div class="meta-card"><strong>总体评分:</strong><br>66/100</div>
+            </div>
+        </header>
+
+        <div class="score-card">
+            <h2>总体评分</h2>
+            <div class="score-number">66</div>
+            <p style="opacity:0.8; margin-top:8px">技术 SEO: 75/100 | 内容 SEO: 58/100</p>
+        </div>
+
+        <div class="summary">
+            <h2>问题统计</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="stat-number" style="color:#f87171">1</div><div>Critical</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#fbbf24">5</div><div>High</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#facc15">6</div><div>Medium</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#60a5fa">2</div><div>Low</div></div>
+            </div>
+        </div>
+
+        <h2 style="margin: 24px 0 16px 0;">发现的问题</h2>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">页面缺少 H2 及以下层级标题，内容结构扁平</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面包含 10 个不同的 IM 渠道模块，但 H2 数量为 0。这导致页面缺乏语义结构，搜索引擎难以抓取各渠道的核心内容，严重影响长尾词排名和页面权重分配。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>为每个 IM 渠道（如微信、飞书、Discord等）添加 H2 标签，例如 '<h2>微信 AI 助理接入教程</h2>'，以建立清晰的信息层次并优化长尾关键词。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺少 Strict-Transport-Security (HSTS) 响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>网站虽然使用了 HTTPS，但响应头中缺少 Strict-Transport-Security。这使得网站容易受到协议降级攻击和中间人攻击，同时也会影响浏览器安全评级。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 Cloudflare 设置或服务器 Nginx/Apite 配置中添加 Strict-Transport-Security 响应头，建议值：'strict-transport-security: max-age=31536000; includeSubDomains; preload'</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺少 X-Frame-Options 响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中 X-Frame-Options 为空，这意味着网站允许被嵌入到其他网站的 iframe 中，容易遭受点击劫持攻击。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加 X-Frame-Options 响应头，建议设置为 'DENY' 或 'SAMEORIGIN'。如果使用 CSP 的 frame-ancestors 指令，则可忽略此项，但当前未见 CSP 头。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">Title 标签缺乏核心搜索关键词</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>当前 Title 为'消息渠道 - AISTORE'，'消息渠道'过于宽泛且缺乏用户搜索意图（如接入、教程、AI助理等），难以在搜索引擎中获得良好排名。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 Title 优化为包含核心业务词和长尾词的格式，例如：'AI助理消息渠道接入教程 - 微信/飞书/钉钉/Discord - AISTORE'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">H1 标签过于单薄，未包含价值主张</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>H1 仅为'消息渠道'，没有利用 H1 的高权重来布局关键词或传达页面核心价值，浪费了重要的 SEO 位置。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 H1 扩展为更具描述性和吸引力的文案，例如：'消息渠道：10大主流IM平台 AI 助理接入指南'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">OG Title 缺失品牌词且缺乏吸引力</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>OG Title 仅为'消息渠道'，在社交媒体分享时无法展示品牌信息，且文案枯燥，难以吸引点击。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>修改 OG Title 使其与页面 Title 一致，或更具社交传播属性，如：'一键接入10大IM平台：打造你的专属AI助理 - AISTORE'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺少结构化数据</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面 HTML 中未发现 JSON-LD 格式的 Schema Markup。对于展示多种消息渠道的页面，缺乏结构化数据会使搜索引擎难以深入理解页面内容，错失搜索结果富媒体展示的机会。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>根据页面内容添加合适的 Schema.org 结构化数据。例如，可添加 'ItemList' 标记各个渠道，或针对软件应用添加 'SoftwareApplication'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">HTML 文档的 CDN 缓存时间过长</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头 cache_control 设置为 's-maxage=31536000'（1年），这对于动态 HTML 文档来说极长。如果页面内容更新，CDN 将持续提供旧版本，导致搜索引擎抓取到过时内容，影响索引时效性。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 HTML 文档的 s-maxage 缩短至合理时间（如 3600 秒/1小时，或最多 86400 秒/1天），并在内容更新时主动刷新 CDN 缓存。静态资源（JS/CSS/图片）可保持长期缓存。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">首屏加载了大量异步 JS 脚本和外部 CSS</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面头部加载了 14 个以上的异步 JS 分块以及外部字体 CSS（cdn.jsdelivr.net/npm/misans）。虽然脚本标记为 async，但大量并发请求和外部 CSS 的加载仍可能争抢带宽，导致 LCP 和 FCP 延迟，影响 Core Web Vitals 评分。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>审查 Next.js 打包策略，尽量合并小的 chunk；确保外部字体使用 font-display: swap 避免阻塞文本渲染；考虑将非首屏关键脚本延迟加载（defer/Dynamic Import）。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">行动号召 (CTA) 单一，缺乏转化引导</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面各渠道卡片仅提供'查看教程'的弱 CTA，缺乏直接引导用户注册或使用产品的强转化按钮，错失了潜在的客户转化机会。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在页面顶部增加主 CTA（如'立即创建 AI 助理'），各渠道卡片可保留'查看教程'并增加'一键接入'按钮，形成双 CTA 组合。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">Meta Description 缺乏行动号召力</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>描述内容仅为功能陈述，虽然包含了平台名称，但结尾没有促使用户点击的行动号召，在搜索结果中的点击率（CTR）可能受限。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在描述末尾加入强有力的 CTA，例如：'...帮助你快速把 AI 助理接入消息入口，立即查看接入教程！'</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">页脚版权年份异常，影响信任信号</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页脚显示'© 2026 AISTORE'，年份超前于当前实际年份，可能让用户误以为网站未维护或存在配置错误，降低网站可信度。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将版权年份修正为当前年份（如 2024），或使用动态脚本自动获取当前年份。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">Open Graph site_name 与品牌名不一致</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面的 og:site_name 属性设置为 'aistore.club'（域名格式），而页面 Title 和视觉 Logo 显示为 'AISTORE'，品牌标识不统一。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 og:site_name 的值修改为 'AISTORE'，以保持社交媒体分享时的品牌一致性。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">可访问性与语义化标签可能不足</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>从提供的文本结构看，渠道列表可能未使用语义化标签（如 <article> 或 <ul>/<li>）包裹，且若有平台 Logo，可能缺乏描述性 alt 文本。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>确保各渠道卡片使用语义化标签构建，若有图片，需添加包含关键词的 alt 文本（如 alt='接入微信 AI 助理'）。</p>
+            </div>
+        </div>
+        
+
+        <footer>
+            <p>由 SEO 审计平台自动生成 | Powered by AI</p>
+        </footer>
+    </div>
+</body>
+</html>
