@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO 审计报告 - https://www.binance.com/zh-CN</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 24px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 { color: #38bdf8; margin-bottom: 12px; font-size: 1.4em; }
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .meta-card {
+            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+        }
+        .summary {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 18px 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.2em; font-weight: bold; color: #38bdf8; }
+        .score-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .score-number {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .issue-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border-left: 5px solid;
+        }
+        .issue-card.critical { border-left-color: #f87171; }
+        .issue-card.high { border-left-color: #fbbf24; }
+        .issue-card.medium { border-left-color: #facc15; }
+        .issue-card.low { border-left-color: #60a5fa; }
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .issue-title { font-size: 1.2em; flex: 1; color: #f8fafc; }
+        .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-priority { background: #f87171; color: #fff; }
+        .badge-priority.high { background: #fbbf24; color: #0f172a; }
+        .badge-priority.medium { background: #facc15; color: #0f172a; }
+        .badge-priority.low { background: #60a5fa; color: #fff; }
+        .badge-category { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); }
+        .issue-section { margin: 14px 0; }
+        .issue-section h4 { color: #38bdf8; margin-bottom: 6px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .issue-section p { color: #cbd5e1; line-height: 1.7; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.5;
+            font-size: 0.85em;
+            padding: 16px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 1.6em; }
+            .issue-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SEO 审计报告</h1>
+            <p style="opacity:0.8">自动化 SEO 审计平台</p>
+            <div class="meta-info">
+                <div class="meta-card"><strong>URL:</strong><br>https://www.binance.com/zh-CN</div>
+                <div class="meta-card"><strong>审计时间:</strong><br>2026-04-16 06:04</div>
+                <div class="meta-card"><strong>发现问题:</strong><br>13</div>
+                <div class="meta-card"><strong>总体评分:</strong><br>12/100</div>
+            </div>
+        </header>
+
+        <div class="score-card">
+            <h2>总体评分</h2>
+            <div class="score-number">12</div>
+            <p style="opacity:0.8; margin-top:8px">技术 SEO: 20/100 | 内容 SEO: 5/100</p>
+        </div>
+
+        <div class="summary">
+            <h2>问题统计</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="stat-number" style="color:#f87171">6</div><div>Critical</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#fbbf24">5</div><div>High</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#facc15">2</div><div>Medium</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#60a5fa">0</div><div>Low</div></div>
+            </div>
+        </div>
+
+        <h2 style="margin: 24px 0 16px 0;">发现的问题</h2>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">非标准 HTTP 状态码 (202 Accepted)</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面返回了 202 状态码而非 200 OK。202 状态码表示请求已被接受但尚未处理完成，搜索引擎爬虫（如 Googlebot）通常不会索引返回 202 状态码的页面，这会严重阻碍页面的收录。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>检查服务器端渲染（SSR）或 CDN/边缘计算逻辑，确保页面在内容完全加载后向爬虫返回 200 OK 状态码。如果是反爬虫机制导致，请确保对主流搜索引擎爬虫的 User-Agent 放行并返回 200。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">HTML 内容为空</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>提供的 HTML 内容为空。如果搜索引擎爬虫抓取到的也是空内容，说明页面可能严重依赖客户端渲染 (CSR) 且未提供 SSR，或者存在爬虫拦截，导致搜索引擎无法读取页面核心内容，严重影响索引。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>实施服务端渲染 (SSR) 或预渲染 (Prerender) 解决方案，确保爬虫在获取初始 HTML 时就能看到完整的页面内容。同时检查是否误封禁了搜索引擎爬虫的 IP 或 User-Agent。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">页面文本内容完全缺失（疑似 CSR 渲染问题）</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>提取的页面文本内容为空，这通常意味着页面完全依赖客户端 JavaScript 渲染（CSR）。主流搜索引擎爬虫可能无法执行 JS 获取内容，导致页面被判定为空页面，完全无法获得索引和排名。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>实施服务端渲染（SSR）或预渲染（Prerender）技术，确保爬虫在无需执行 JS 的情况下即可获取完整的页面文本和链接结构。同时使用动态渲染作为备选方案。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺失页面 Title 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面的 Title 标签为空，这是 On-Page SEO 中最严重的错误。搜索引擎无法识别页面主题，用户在搜索结果中也看不到页面标题，导致点击率趋近于零。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加包含核心关键词的 Title 标签，例如：'币安|全球领先的区块链数字资产交易平台'，并控制在 60 个字符以内。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺失 Meta Description</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面缺少 Meta Description，搜索引擎将自动从（可能不存在的）页面内容中提取片段，导致搜索结果展示不可控，严重影响点击率和用户预期管理。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>编写包含核心业务、价值主张和行动号召（CTA）的描述，例如：'注册币安，享受安全、便捷的比特币和加密货币交易服务。'，控制在 160 个字符以内。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺失 H1 标签及标题层级</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面 H1 为空且 H2 数量为 0，内容缺乏任何语义化结构。搜索引擎无法理解页面的核心主题和内容层次，用户也无法快速扫视页面重点。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>设置唯一的 H1 标签突出页面核心价值（如'欢迎来到币安'），并使用 H2-H6 标签构建清晰的内容大纲（如'现货交易'、'合约交易'、'理财'等）。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">禁止缓存的响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中包含 `Cache-Control: no-store, max-age=0`，这强制指示浏览器和 CDN 不要缓存页面内容。这不仅会极大增加源站服务器负载，还会导致页面加载速度（特别是 TTFB）变慢，严重负面影响 Core Web Vitals 得分。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>对于相对静态的页面内容，修改缓存策略。建议设置合理的 `max-age` 和 `s-maxage`（针对 CloudFront 等 CDN），例如 `Cache-Control: public, max-age=3600, s-maxage=86400`，并配合使用 ETag 或 Last-Modified 进行协商缓存。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺少 XML Sitemap</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>未找到 XML 站点地图。Sitemap 有助于搜索引擎发现和抓取网站的重要页面，特别是对于像币安这样结构复杂、页面众多的大型动态网站，缺失 Sitemap 会降低爬取效率。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>创建并维护动态更新的 XML Sitemap，并将其提交到 Google Search Console 和 Bing Webmaster Tools。同时，在 robots.txt 中添加 `Sitemap: https://www.binance.com/sitemap.xml` 指令。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺少 HTTP 严格传输安全 (HSTS) 头</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中缺少 `Strict-Transport-Security`。对于金融/加密货币交易平台，缺失 HSTS 会使网站容易受到降级攻击和 Cookie 劫持，影响用户安全和浏览器对网站安全性的信任评价。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加 `Strict-Transport-Security` 响应头，建议配置为 `max-age=31536000; includeSubDomains; preload`，并考虑提交到 HSTS Preload List。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺失 Canonical 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面未指定 Canonical URL，对于币安这样拥有多语言、多地区版本的网站，极易导致重复内容问题，分散页面权重。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加 Canonical 标签指向当前页面的规范 URL，例如：<link rel="canonical" href="https://www.binance.com/zh-CN" />。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺失 HTML Lang 属性</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面未声明语言属性，搜索引擎和浏览器难以判断页面的目标受众语言，可能导致中文页面被错误地展示给其他语言用户，影响地区定位和可访问性。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 <html> 标签中添加 lang 属性，即 <html lang="zh-CN">。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺少 X-Frame-Options 响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中未设置 `X-Frame-Options`，网站可能被恶意嵌入到其他网站的 iframe 中，存在点击劫持 风险，对金融类网站尤为危险。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加 `X-Frame-Options: DENY` 或 `SAMEORIGIN` 响应头，或使用更现代的 `Content-Security-Policy: frame-ancestors 'self';` 替代。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺失 Open Graph 社交媒体标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>缺少 OG Title 和 OG Description，当页面被分享至微信、Twitter、Facebook 等社交平台时，无法展示自定义的标题、描述和图片，严重影响社交传播的视觉效果和点击率。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>补充完整的 Open Graph 标签（og:title, og:description, og:image, og:url, og:type），确保社交分享时的品牌展示。</p>
+            </div>
+        </div>
+        
+
+        <footer>
+            <p>由 SEO 审计平台自动生成 | Powered by AI</p>
+        </footer>
+    </div>
+</body>
+</html>
