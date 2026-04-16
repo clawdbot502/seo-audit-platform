@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO 审计报告 - https://slerf.tools/en-us/</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 24px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 { color: #38bdf8; margin-bottom: 12px; font-size: 1.4em; }
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .meta-card {
+            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+        }
+        .summary {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 18px 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.2em; font-weight: bold; color: #38bdf8; }
+        .score-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .score-number {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .issue-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border-left: 5px solid;
+        }
+        .issue-card.critical { border-left-color: #f87171; }
+        .issue-card.high { border-left-color: #fbbf24; }
+        .issue-card.medium { border-left-color: #facc15; }
+        .issue-card.low { border-left-color: #60a5fa; }
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .issue-title { font-size: 1.2em; flex: 1; color: #f8fafc; }
+        .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-priority { background: #f87171; color: #fff; }
+        .badge-priority.high { background: #fbbf24; color: #0f172a; }
+        .badge-priority.medium { background: #facc15; color: #0f172a; }
+        .badge-priority.low { background: #60a5fa; color: #fff; }
+        .badge-category { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); }
+        .issue-section { margin: 14px 0; }
+        .issue-section h4 { color: #38bdf8; margin-bottom: 6px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .issue-section p { color: #cbd5e1; line-height: 1.7; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.5;
+            font-size: 0.85em;
+            padding: 16px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 1.6em; }
+            .issue-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SEO 审计报告</h1>
+            <p style="opacity:0.8">自动化 SEO 审计平台</p>
+            <div class="meta-info">
+                <div class="meta-card"><strong>URL:</strong><br>https://slerf.tools/en-us/</div>
+                <div class="meta-card"><strong>审计时间:</strong><br>2026-04-16 03:44</div>
+                <div class="meta-card"><strong>发现问题:</strong><br>17</div>
+                <div class="meta-card"><strong>总体评分:</strong><br>25/100</div>
+            </div>
+        </header>
+
+        <div class="score-card">
+            <h2>总体评分</h2>
+            <div class="score-number">25</div>
+            <p style="opacity:0.8; margin-top:8px">技术 SEO: 38/100 | 内容 SEO: 12/100</p>
+        </div>
+
+        <div class="summary">
+            <h2>问题统计</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="stat-number" style="color:#f87171">4</div><div>Critical</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#fbbf24">7</div><div>High</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#facc15">5</div><div>Medium</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#60a5fa">1</div><div>Low</div></div>
+            </div>
+        </div>
+
+        <h2 style="margin: 24px 0 16px 0;">发现的问题</h2>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺少关键安全响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中缺少 Strict-Transport-Security (HSTS) 和 X-Frame-Options。HSTS 缺失会导致浏览器可能通过不安全的 HTTP 访问站点，存在降级攻击风险；X-Frame-Options 缺失则使网站容易受到点击劫持攻击。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在服务器或 CDN（Cloudflare）配置中添加 Strict-Transport-Security 头（如 'max-age=31536000; includeSubDomains'）和 X-Frame-Options 头（如 'SAMEORIGIN' 或 'DENY'）。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">移动端视口配置阻碍缩放</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTML 中的 viewport meta 标签包含了 'maximum-scale=1' 和 'user-scalable=no'。这阻止了用户在移动端捏合缩放页面，严重违反了 Web 无障碍（WCAG）标准，并可能受到搜索引擎在移动端友好性方面的惩罚。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 viewport meta 标签修改为 '<meta name="viewport" content="width=device-width, initial-scale=1">'，移除限制用户缩放的属性。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺失 H1 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面没有任何 H1 标签。H1 是页面最重要的 SEO 排名信号之一，也是用户和搜索引擎理解页面核心主题的关键，缺失会严重影响 On-Page SEO 和可访问性。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加一个包含核心关键词的 H1 标签，例如：<h1>Create Your Solana Token - No-Code Solana Blockchain Tool</h1></p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">页面内容极其单薄</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面正文仅有标题文本，没有任何实质性的内容、功能介绍、操作步骤或价值主张。这会导致极高的跳出率，且无法获得任何搜索引擎排名。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>补充完整的页面内容，包括：工具的核心优势（如安全、开源、低成本）、创建代币的步骤说明、智能合约审计证明（信任信号）以及清晰的 CTA（行动号召）按钮。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">页面语言属性与实际内容严重不符</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTML 标签设置了 'lang="en-us"' 且 'translate="no"'，但 Title、Description 和 Keywords 中包含大量中文（如“区块链创建服务工具”）。这会严重混淆搜索引擎对页面语种的判断，导致在英文和中文搜索结果中排名均不佳。'translate="no"' 更是明确告诉浏览器和搜索引擎不要翻译此页面。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>如果该页面面向英文用户，应将 Title 和 Description 改为纯英文，并保持 'lang="en-us"'；如果面向中文用户，应将 'lang' 改为 'zh-cn'。移除 'translate="no"' 或仅将其应用于不需要翻译的专有名词。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">结构化数据 配置错误</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Schema markup 中存在多处错误：1. sameAs 属性指向了自身网站，而非社交媒体主页；2. subOrganization 循环引用了自身相同的 @id 和 url；3. Schema 中的 URL 使用了 'www.slerf.tools'，而实际页面 URL 是 'slerf.tools'（无 www），这会导致数据不一致。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>修正 Schema：将 sameAs 替换为真实的 Twitter/Facebook 等社交链接；移除无意义的 subOrganization 循环引用；确保 Schema 中的 URL 与网站首选域名（是否带 www）完全一致。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">Twitter Card 标签类型错误</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>meta property 'twitter:card' 的值被设置为图片 URL ('https://slerf.tools/img/preview/banner.png')，而不是有效的卡片类型（如 'summary' 或 'summary_large_image'）。这会导致 Twitter 爬虫无法正确解析和展示链接预览。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 twitter:card 的内容修改为 'summary_large_image'，并确保图片 URL 仅存在于 twitter:image 标签中。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">语言属性与页面内容冲突</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面的 Lang 属性设置为 'en-us'，但 Title 和页面内容却混合了大量中文。这不仅会让英文用户困惑，也会让搜索引擎无法准确定位页面的目标受众区域和语言。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>如果目标受众是英文用户，请将所有文案翻译为地道的英文，并保持 lang='en-us'；如果是中文用户，请将 lang 属性改为 'zh-cn' 并优化中文文案。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">Title 和 Description 关键词堆砌且缺乏吸引力</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Title 和 Description 存在中英混合、关键词堆砌现象，且 Description 在结尾处被截断，缺乏完整的句子结构和吸引点击的营销文案，严重影响点击率（CTR）。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>重写 Title 和 Description，使用自然流畅的语言。例如 - Title: 'Create Solana Token | Free & Secure Tool - Slerf Tools'；Description: 'Easily create your own Solana token in minutes. Secure, open-source, and no coding required. Try Slerf Tools today!'</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺失内容层级结构（H2-H6）</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面没有任何 H2-H6 标签，缺乏内容组织结构。这不仅让页面可读性极差，也让搜索引擎无法抓取页面的逻辑层次和次要主题。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>使用 H2 标签划分内容板块，例如：<h2>Why Choose Slerf Tools?</h2>, <h2>How to Create a Solana Token</h2>, <h2>Frequently Asked Questions</h2> 等。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺失价值主张与行动号召（CTA）</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>文案完全没有向用户解释为什么要使用该工具（价值主张），也没有引导用户进行下一步操作（如'立即创建'按钮），导致转化率为零。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在首屏添加清晰的价值主张（如'在 5 分钟内安全创建您的 Solana 代币'），并配合高对比度的 CTA 按钮（如'Launch App' 或 'Create Token Now'）。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缓存控制头缺失</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中 'cache_control' 为空。缺乏缓存策略会导致用户每次访问都需要向服务器重新请求静态资源，增加服务器负载，并显著拖慢页面加载速度，影响 Core Web Vitals 表现。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 Cloudflare 或源服务器配置缓存策略。对于静态资源（如 CSS, JS, 图片），设置较长的 max-age（如 1 年）；对于 HTML 文档，设置适度的缓存或协商缓存。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">元描述 质量差且截断</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Description 内容为中英混合，且在结尾处生硬截断（'Secure, open-source, providing'），未能提供完整的句子或明确的行动号召。这会降低搜索结果中的点击率（CTR）。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>重写 Meta Description，使用通顺的单一语言（根据页面目标受众选择中文或英文），确保长度在 150-160 个字符之间，并包含核心关键词和清晰的转化引导。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">首屏渲染被大量内联 CSS 和动画阻塞</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTML 头部包含了大量用于加载动画（如 #pre-loading, .cloud, .gear 等）的内联 CSS。这些非核心渲染样式增加了 HTML 文档体积，延迟了首次内容绘制（FCP）和最大内容绘制（LCP）。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将加载动画相关的 CSS 提取到外部文件中，并使用 'async' 或 'onload' 方式异步加载，或者使用关键 CSS 内联策略，仅内联首屏必需的样式。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺失 Canonical 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面没有指定 Canonical URL，在网站存在多语言或参数路径时，容易导致重复内容问题，分散页面权重。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 <head> 中添加 <link rel='canonical' href='https://slerf.tools/en-us/' /></p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">Open Graph 优化不足</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>OG Title 和 OG Description 直接复制了糟糕的网页 Title 和 Description，且缺失 OG Image。在社交媒体分享时将显示乱码般的文本，无法吸引点击。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>为社交分享定制专门的英文 OG 标签，并添加一张尺寸为 1200x630 像素的 OG Image，展示产品 Logo 或代币创建界面。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">Keywords 标签存在拼写错误</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Meta keywords 中将 'Solana' 拼写为了 'Solan'。虽然主流搜索引擎已降低 Keywords 标签的权重，但拼写错误仍显得不够专业。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>修正拼写错误，将 'Solan' 改为 'Solana'。或者考虑直接移除 Meta Keywords 标签以减少代码冗余。</p>
+            </div>
+        </div>
+        
+
+        <footer>
+            <p>由 SEO 审计平台自动生成 | Powered by AI</p>
+        </footer>
+    </div>
+</body>
+</html>
