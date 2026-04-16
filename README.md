@@ -35,19 +35,34 @@ Vercel 展示报告页面
 
 在仓库设置中添加以下 Secrets（Settings → Secrets and variables → Actions）：
 
-**必需配置：**
-- `MODEL_PROVIDER`: 模型提供商（`openai` / `anthropic` / `google` / `deepseek`）
-- 对应的 API Key：
-  - `OPENAI_API_KEY`: OpenAI API Key（如果使用 OpenAI）
-  - `ANTHROPIC_API_KEY`: Anthropic API Key（如果使用 Claude）
-  - `GOOGLE_API_KEY`: Google API Key（如果使用 Gemini）
-  - `DEEPSEEK_API_KEY`: DeepSeek API Key（如果使用 DeepSeek）
+#### 方式 A：灵活模式（推荐，支持任意模型和代理）
+
+- `MODEL_NAME`: 模型名称（LiteLLM 格式，如 `openai/gpt-4o`、`anthropic/claude-3-opus-20240229`、`deepseek/deepseek-chat`）
+- `API_KEY`: 对应的 API Key
+- `BASE_URL`: （可选）自定义 API Base URL，用于国内外代理/中转服务
+- `FALLBACK_MODELS`: （可选）逗号分隔的 fallback 模型列表，主模型失败时自动切换
 
 **使用 gh CLI 配置（推荐）：**
 ```bash
-gh secret set MODEL_PROVIDER --body "openai"
-gh secret set OPENAI_API_KEY --body "sk-..."
+gh secret set MODEL_NAME --body "openai/gpt-4o"
+gh secret set API_KEY --body "sk-..."
+gh secret set BASE_URL --body "https://api.openai.com/v1"
+gh secret set FALLBACK_MODELS --body "anthropic/claude-3-opus-20240229,deepseek/deepseek-chat"
 ```
+
+#### 方式 B：兼容模式（保留旧版配置习惯）
+
+- `MODEL_PROVIDER`: 模型提供商（`openai` / `anthropic` / `google` / `deepseek`）
+- 对应的 API Key：
+  - `OPENAI_API_KEY`: OpenAI API Key
+  - `ANTHROPIC_API_KEY`: Anthropic API Key
+  - `GOOGLE_API_KEY`: Google API Key
+  - `DEEPSEEK_API_KEY`: DeepSeek API Key
+- 对应的 Base URL（可选）：
+  - `OPENAI_BASE_URL`
+  - `ANTHROPIC_BASE_URL`
+  - `GOOGLE_BASE_URL`
+  - `DEEPSEEK_BASE_URL`
 
 ### 2. 部署 Web 应用到 Vercel
 
@@ -111,9 +126,19 @@ pip install -r requirements.txt
 
 创建 `.env` 文件：
 
+**灵活模式（推荐）：**
+```bash
+MODEL_NAME=openai/gpt-4o
+API_KEY=sk-...
+BASE_URL=https://api.openai.com/v1
+FALLBACK_MODELS=anthropic/claude-3-opus-20240229
+```
+
+**兼容模式：**
 ```bash
 MODEL_PROVIDER=openai
 OPENAI_API_KEY=sk-...
+OPENAI_BASE_URL=https://api.openai.com/v1
 ```
 
 ### 运行审计
@@ -191,12 +216,19 @@ seo-audit-platform/
 
 ## 支持的模型
 
-| 提供商 | 模型 | 环境变量 |
-|--------|------|----------|
-| OpenAI | gpt-4-turbo-preview | `OPENAI_API_KEY` |
-| Anthropic | claude-3-opus-20240229 | `ANTHROPIC_API_KEY` |
-| Google | gemini/gemini-pro | `GOOGLE_API_KEY` |
-| DeepSeek | deepseek/deepseek-chat | `DEEPSEEK_API_KEY` |
+由于采用 [LiteLLM](https://docs.litellm.ai/docs/providers) 统一接口，理论上支持 **100+ 家模型提供商**。以下是常见示例：
+
+| 提供商 | 模型 | 灵活模式配置 |
+|--------|------|-------------|
+| OpenAI | `openai/gpt-4o` | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+| Anthropic | `anthropic/claude-3-opus-20240229` | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+| Google | `gemini/gemini-1.5-pro` | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+| DeepSeek | `deepseek/deepseek-chat` | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+| Mistral | `mistral/mistral-large-latest` | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+| Azure OpenAI | `azure/gpt-4o` | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+| 国内代理 | 任意模型 | `MODEL_NAME` + `API_KEY` + `BASE_URL` |
+
+> 提示：只要 LiteLLM 支持的 provider，通过 `MODEL_NAME`（`provider/model` 格式）+ `API_KEY` + `BASE_URL` 即可接入，无需修改代码。
 
 ## 下一步计划
 
@@ -231,7 +263,7 @@ seo-audit-platform/
 ## 常见问题
 
 ### Q: 如何切换 AI 模型？
-A: 修改 GitHub Secrets 中的 `MODEL_PROVIDER` 值，支持：`openai`、`anthropic`、`google`、`deepseek`
+A: 推荐修改 GitHub Secrets 中的 `MODEL_NAME` 和 `API_KEY`。`MODEL_NAME` 支持 LiteLLM 支持的任意模型（如 `openai/gpt-4o`、`anthropic/claude-3-opus-20240229`、`gemini/gemini-1.5-pro`、`mistral/mistral-large-latest` 等）。如果需要走代理，可同时配置 `BASE_URL`。
 
 ### Q: 审计需要多长时间？
 A: 通常 2-3 分钟，取决于网站大小和 AI 模型响应速度
