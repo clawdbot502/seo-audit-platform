@@ -16,7 +16,7 @@ export async function GET() {
 
     // 获取 reports 目录内容
     const response = await fetch(
-      `https://api.github.com/repos/${repoOwner}/${repoName}/contents/seo-audit-engine/reports`,
+      `https://api.github.com/repos/${repoOwner}/${repoName}/contents/reports`,
       {
         headers: {
           'Authorization': `Bearer ${githubToken}`,
