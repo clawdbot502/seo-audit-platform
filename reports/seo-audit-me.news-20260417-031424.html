@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO 审计报告 - https://www.me.news/</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 24px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 { color: #38bdf8; margin-bottom: 12px; font-size: 1.4em; }
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .meta-card {
+            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+        }
+        .summary {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 18px 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.2em; font-weight: bold; color: #38bdf8; }
+        .score-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .score-number {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .issue-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border-left: 5px solid;
+        }
+        .issue-card.critical { border-left-color: #f87171; }
+        .issue-card.high { border-left-color: #fbbf24; }
+        .issue-card.medium { border-left-color: #facc15; }
+        .issue-card.low { border-left-color: #60a5fa; }
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .issue-title { font-size: 1.2em; flex: 1; color: #f8fafc; }
+        .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-priority { background: #f87171; color: #fff; }
+        .badge-priority.high { background: #fbbf24; color: #0f172a; }
+        .badge-priority.medium { background: #facc15; color: #0f172a; }
+        .badge-priority.low { background: #60a5fa; color: #fff; }
+        .badge-category { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); }
+        .issue-section { margin: 14px 0; }
+        .issue-section h4 { color: #38bdf8; margin-bottom: 6px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .issue-section p { color: #cbd5e1; line-height: 1.7; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.5;
+            font-size: 0.85em;
+            padding: 16px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 1.6em; }
+            .issue-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SEO 审计报告</h1>
+            <p style="opacity:0.8">自动化 SEO 审计平台</p>
+            <div class="meta-info">
+                <div class="meta-card"><strong>URL:</strong><br>https://www.me.news/</div>
+                <div class="meta-card"><strong>审计时间:</strong><br>2026-04-17 03:14</div>
+                <div class="meta-card"><strong>发现问题:</strong><br>20</div>
+                <div class="meta-card"><strong>总体评分:</strong><br>31/100</div>
+            </div>
+        </header>
+
+        <div class="score-card">
+            <h2>总体评分</h2>
+            <div class="score-number">31</div>
+            <p style="opacity:0.8; margin-top:8px">技术 SEO: 45/100 | 内容 SEO: 18/100</p>
+        </div>
+
+        <div class="summary">
+            <h2>问题统计</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="stat-number" style="color:#f87171">4</div><div>Critical</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#fbbf24">6</div><div>High</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#facc15">7</div><div>Medium</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#60a5fa">3</div><div>Low</div></div>
+            </div>
+        </div>
+
+        <h2 style="margin: 24px 0 16px 0;">发现的问题</h2>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">Schema Markup 品牌名称严重错误</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>在 JSON-LD 结构化数据中，CollectionPage 的 name 字段被错误地设置为 'Binance - Cryptocurrency Exchange Marketplace'，这与网站的实际品牌（ME News / MetaEra）完全不符，会严重误导搜索引擎并可能导致垃圾标记惩罚。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>立即将 Schema 中的 name 字段更改为与网站一致的品牌名称，如 'ME News' 或 'MetaEra'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">使用客户端 JavaScript 进行主域重定向</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTML 中包含一段 JS 代码，用于将 me.news 重定向到 www.me.news。搜索引擎爬虫通常会忽略或无法执行此类 JS 重定向，这会导致爬虫认为 me.news 和 www.me.news 是重复内容，且无法传递链接权重。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在服务器端（Nginx 配置）实施 301 永久重定向，将所有 me.news 的请求重定向到 www.me.news。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">页面严重依赖 JavaScript 渲染（CSR），爬虫无法获取核心内容</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面正文仅显示 'We're sorry but MetaEra doesn't work properly without JavaScript enabled.'，这表明网站采用纯客户端渲染（CSR）。大多数搜索引擎爬虫（尤其是百度、Bing等）在抓取时不会执行 JS，导致它们只能抓取到这句空白提示，网站内容完全无法被索引。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>实施服务端渲染（SSR）或静态站点生成（SSG），如使用 Nuxt.js 或 Next.js 重构。或者采用预渲染（Prerendering）技术，并为爬虫提供完整的 HTML 快照，确保核心内容和元数据在源代码中直接可见。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">元数据与 OG 标签出现严重乱码（Mojibake）</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Title、Description 以及 OG 标签中的中文均显示为乱码（如 'é¢å çèµè®¯å¹³å°'），这通常是由于 HTTP 响应头或 HTML Meta 声明的字符集（Charset）与实际编码（如 UTF-8）不匹配导致。这会严重破坏搜索结果展示和社交媒体分享效果。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>1. 确保 HTML <head> 中包含 <meta charset="utf-8"> 且位于最前面；2. 检查服务器 HTTP 响应头 Content-Type 是否正确声明了 charset=utf-8；3. 修复源文件本身的编码格式，确保以 UTF-8 without BOM 保存。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">纯客户端渲染 (CSR) 缺乏 SSR/预渲染</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Body 中仅包含 `<div id="app"></div>` 和 noscript 提示，表明网站是纯 SPA（单页应用）。虽然现代搜索引擎支持 JS 渲染，但处理延迟高、资源消耗大，极易导致页面索引失败或内容缺失。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>强烈建议采用服务端渲染 (SSR) 或预渲染 (Prerender) 技术（如 Nuxt.js/Next.js），或为搜索引擎提供静态 HTML 快照，以确保内容能被快速、完整地抓取。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺少 Cache-Control 响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>服务器的响应头中 cache_control 为空，这意味着浏览器和 CDN 无法有效缓存页面静态资源，每次访问都会产生完整的服务器请求，严重影响页面加载性能和 Core Web Vitals。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 Nginx 服务器配置中为静态资源（CSS, JS, 图片等）添加长周期的 Cache-Control（如 max-age=31536000），并为 HTML 文档添加适当的短周期或协商缓存。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">Viewport 配置阻碍缩放</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Meta viewport 标签中包含了 `maximum-scale=1,minimum-scale=1,user-scalable=no`，这阻止了用户在移动端缩放页面。这不仅严重影响无障碍访问（Accessibility），也是 Google 移动端友好性测试中明确扣分的项目。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>从 viewport 标签中移除 `maximum-scale=1`, `minimum-scale=1` 和 `user-scalable=no` 属性。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">页面缺失 H1 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>H1 标签是页面最重要的语义化标签，用于告知搜索引擎页面的核心主题。当前页面 H1 数量为 0，导致内容缺乏主心骨，严重影响 SEO 权重传递和内容理解。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加唯一的 H1 标签，包含页面核心关键词（如 'Web3 资讯平台' 或 'ME News'），并确保其与 Title 语义呼应但不完全重复。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺失 <html> 标签的 lang 属性</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面 Lang 属性为空。对于中文内容为主的 Web3 资讯站，缺失 lang 属性会导致屏幕阅读器无法正确发音，搜索引擎难以识别页面语言，从而影响本地化搜索排名。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 <html> 标签中添加语言声明，中文网站建议设置为 <html lang="zh-CN">。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">内容结构缺失：无 H2-H6 子标题</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面 H2 数量为 0，缺乏任何子标题结构。这导致页面内容没有层次感，不仅严重影响长页面的可读性和用户体验，也让搜索引擎难以理解页面的内容脉络和逻辑结构。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>根据资讯分类或内容模块，合理使用 H2-H3 标签构建内容大纲（如 H2: 最新快讯、H2: 深度文章、H2: 品牌增长服务等），并在子标题中自然融入长尾关键词。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺少 X-Frame-Options 响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>响应头中未包含 X-Frame-Options，网站存在被恶意嵌入到 iframe 中进行点击劫持 (Clickjacking) 攻击的风险。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 Nginx 配置中添加 `X-Frame-Options: SAMEORIGIN` 或 `DENY`，或者使用更现代的 Content-Security-Policy 的 frame-ancestors 指令替代。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">HTML Lang 属性为空</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p><html lang=""> 中的语言代码为空。搜索引擎和屏幕阅读器依赖此属性来判断页面的主要语言，缺失会导致搜索引擎难以正确识别内容的语言区域，影响本地化搜索排名。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 lang 属性设置为正确的语言代码，例如针对中文内容使用 `lang="zh-CN"` 或 `lang="zh-HK"`。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">Schema Markup 中 @id 冲突</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>在 JSON-LD 的 @graph 中，CollectionPage、WebSite 和 Organization 三个不同实体的 @id 均被设置为 'https://www.me.news/'。这会导致搜索引擎在解析实体关系时产生混淆，无法正确识别网站的组织架构。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>为不同实体分配唯一的 @id，例如 Organization 使用 `https://www.me.news/#organization`，WebSite 使用 `https://www.me.news/#website`。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">Content-Security-Policy 配置不完整</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTML 中的 CSP meta 标签仅配置了 `frame-src`，缺少 `default-src`、`script-src` 等关键指令，且混用了不标准的 `webcompt:` 源，这不仅无法提供有效的安全防护，还可能导致浏览器解析异常。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>完善 CSP 策略，至少添加 `default-src 'self'` 和适当的 `script-src`，或者移除该无效的 meta 标签，转而在服务器端通过 HTTP 响应头配置完整的 CSP。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">Viewport Meta 标签格式错误</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Viewport meta 标签中混入了不属于该标签的属性 `text/html,charset=utf-8` 以及错误的 http-equiv='content-type'，这可能导致部分浏览器解析 viewport 失败，影响移动端适配。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>清理 viewport meta 标签，仅保留视口相关属性：`<meta name="viewport" content="width=device-width, initial-scale=1">`。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺失 Canonical 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面未设置 Canonical URL。对于资讯平台，如果存在列表页、参数筛选页或 AMP 页，没有 Canonical 容易导致重复内容问题，分散页面权重。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 <head> 中添加 <link rel="canonical" href="https://www.me.news/" />，明确告知搜索引擎首选的规范网址。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">社交媒体分享标签（OG）内容乱码且可能不完整</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>OG Title 和 OG Description 存在与 Meta 数据相同的乱码问题，导致在微信、Twitter、Facebook 等平台分享时显示无意义的乱码字符，严重影响社交传播和点击率。同时未见 og:image 等关键标签。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>修复编码问题的同时，完善 Open Graph 协议标签，补充 og:image（建议尺寸 1200x630）、og:type、og:url 等属性，确保社交分享时能展示精美的卡片。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">渲染阻塞的第三方脚本</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>百度统计脚本在 DOM 构建初期通过同步方式插入，微信 JS SDK 也未使用异步加载，这些会阻塞页面的首次渲染 (FCP/LCP)。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将百度统计和微信 JS SDK 的加载方式改为 `async` 或 `defer`，或者将其延迟到页面加载完成后再执行。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">冗余的 Preload 和 Meta 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>同一张 Logo 图片被 Preload 了两次；X-UA-Compatible 声明了两次；Favicon 的 type 属性被错误地写成了 `logo.png` 而非 MIME 类型。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>删除重复的 Preload 和 Meta 标签；将 Favicon 的 type 修改为正确的 MIME 类型，如 `type="image/x-icon"` 或 `type="image/png"`。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">文案缺乏行动号召（CTA）和价值主张展示</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>由于页面处于 JS 未加载的空白状态，没有任何可见的文案、信任信号或 CTA。即使 JS 加载完成，资讯平台也需要在首屏明确展示核心价值主张（如：为什么选择 ME News）和明确的用户引导（订阅、下载、加入社区等）。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在首屏（Hero Section）设计强有力的价值主张文案，配合醒目的 CTA 按钮（如 '立即获取 Web3 内参'、'加入社区'），并在页面中增加信任信号（如：合作项目方 Logo、数据指标等）。</p>
+            </div>
+        </div>
+        
+
+        <footer>
+            <p>由 SEO 审计平台自动生成 | Powered by AI</p>
+        </footer>
+    </div>
+</body>
+</html>
