@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO 审计报告 - https://sol.gtokentool.com/zh-CN</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 24px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 { color: #38bdf8; margin-bottom: 12px; font-size: 1.4em; }
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .meta-card {
+            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+        }
+        .summary {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 18px 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.2em; font-weight: bold; color: #38bdf8; }
+        .score-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .score-number {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .issue-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border-left: 5px solid;
+        }
+        .issue-card.critical { border-left-color: #f87171; }
+        .issue-card.high { border-left-color: #fbbf24; }
+        .issue-card.medium { border-left-color: #facc15; }
+        .issue-card.low { border-left-color: #60a5fa; }
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .issue-title { font-size: 1.2em; flex: 1; color: #f8fafc; }
+        .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-priority { background: #f87171; color: #fff; }
+        .badge-priority.high { background: #fbbf24; color: #0f172a; }
+        .badge-priority.medium { background: #facc15; color: #0f172a; }
+        .badge-priority.low { background: #60a5fa; color: #fff; }
+        .badge-category { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); }
+        .issue-section { margin: 14px 0; }
+        .issue-section h4 { color: #38bdf8; margin-bottom: 6px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.3px; }
+        .issue-section p { color: #cbd5e1; line-height: 1.7; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.5;
+            font-size: 0.85em;
+            padding: 16px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 1.6em; }
+            .issue-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SEO 审计报告</h1>
+            <p style="opacity:0.8">自动化 SEO 审计平台</p>
+            <div class="meta-info">
+                <div class="meta-card"><strong>URL:</strong><br>https://sol.gtokentool.com/zh-CN</div>
+                <div class="meta-card"><strong>审计时间:</strong><br>2026-04-20 02:59</div>
+                <div class="meta-card"><strong>发现问题:</strong><br>18</div>
+                <div class="meta-card"><strong>总体评分:</strong><br>38/100</div>
+            </div>
+        </header>
+
+        <div class="score-card">
+            <h2>总体评分</h2>
+            <div class="score-number">38</div>
+            <p style="opacity:0.8; margin-top:8px">技术 SEO: 42/100 | 内容 SEO: 35/100</p>
+        </div>
+
+        <div class="summary">
+            <h2>问题统计</h2>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="stat-number" style="color:#f87171">3</div><div>Critical</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#fbbf24">5</div><div>High</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#facc15">5</div><div>Medium</div></div>
+                <div class="stat-box"><div class="stat-number" style="color:#60a5fa">5</div><div>Low</div></div>
+            </div>
+        </div>
+
+        <h2 style="margin: 24px 0 16px 0;">发现的问题</h2>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺少 robots.txt 文件</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>网站未提供 robots.txt 文件。这导致搜索引擎爬虫可以不受限制地爬取所有页面（包括可能的无意义动态路径或 API 路径），严重浪费爬取预算，且无法通过该文件指引搜索引擎发现 Sitemap。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在根目录创建 robots.txt 文件。允许主要爬虫访问公开页面，禁止爬取 /api/、/_next/ 等无 SEO 价值的路径，并在文件末尾添加 Sitemap 的绝对 URL。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺少 Canonical 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面未设置 Canonical 标签。对于包含多语言（zh-CN）和可能存在参数路由的工具型网站，缺少 Canonical 容易导致搜索引擎收录重复内容，分散页面权重。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 <head> 中添加 <link rel="canonical" href="https://sol.gtokentool.com/zh-CN" />，明确指定页面的规范网址。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card critical">
+            <div class="issue-header">
+                <div class="issue-title">缺失 Open Graph 社交媒体元数据</div>
+                <div class="badges">
+                    <span class="badge badge-priority critical">CRITICAL</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面的 OG Title 和 OG Description 均为空。当用户在微信、Twitter 等社交媒体分享该链接时，无法展示有吸引力的标题、描述和缩略图，严重影响社交传播效果和点击率。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>补充完整的 Open Graph 标签，包括 og:title、og:description、og:image（建议设计一张凸显 Solana 一键发币的营销海报图）和 og:url。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">过度使用 Image Preload 拖累核心性能</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTML <head> 中存在多达 14 个 <link rel='preload' as='image'> 标签。过度预加载会瞬间耗尽浏览器带宽，严重阻塞关键 JS 和 CSS 的加载，导致首屏内容渲染（FCP）和最大内容绘制（LCP）时间大幅增加。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>仅对首屏视口内的关键大图（如 LCP 图片）使用 preload。移除小图标（如 language.png, hot.png 等）的预加载，建议将小图标合并为雪碧图或使用 SVG/Iconfont 替代。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺少 X-Frame-Options 安全响应头</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>HTTP 响应头中 X-Frame-options 为空，网站存在被恶意 iframe 嵌套进行点击劫持（Clickjacking）攻击的风险，这不仅影响安全性，也可能被部分搜索引擎视为站点不够安全而降低信任度。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 Vercel 配置（vercel.json）或 Next.js 的 headers 配置中添加 X-Frame-Options 响应头，建议设置为 SAMEORIGIN 或 DENY。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">标题层级结构严重缺失（无 H2 标签）</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面仅有 H1 标签，没有任何 H2-H6 标签。这导致页面内容缺乏结构和层次，搜索引擎难以理解页面的主题细分，同时也不利于长尾关键词的布局。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>重构页面内容结构，增加 H2 标签划分核心板块，例如：H2:'为什么选择 GTokenTool 发币'、H2:'Solana 发币教程'、H2:'常见问题 (FAQ)' 等。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">Title 与 H1 内容完全重复</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面的 Title 和 H1 均为'GTokenTool行业领先的Solana链发币平台'。虽然不是致命错误，但浪费了宝贵的 SEO 标题空间，未能覆盖更多搜索意图（如'一键发币'、'SPL代币创建'等）。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 Title 优化为包含品牌词和核心业务词的吸引性短语，如：'Solana一键发币平台 - SPL代币创建工具 | GTokenTool'；H1 保持当前或优化为更具行动号召力的短语。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card high">
+            <div class="issue-header">
+                <div class="issue-title">缺乏信任信号与营销文案</div>
+                <div class="badges">
+                    <span class="badge badge-priority high">HIGH</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>作为金融/区块链工具，页面除了表单外，没有任何信任背书（如发币总量、服务用户数、安全审计报告、合作伙伴 Logo 等），说服力极弱。免责声明虽然存在，但整体文案缺乏转化引导。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在表单下方或侧边增加信任信号模块，例如：'已成功发行 XXX 个代币'、'累计服务 XXX+ 用户'、'智能合约已通过安全审计'等，提升用户信任度和转化率。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">多语言页面缺少 hreflang 标签</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>URL 路径包含 /zh-CN，表明网站支持多语言/多区域。但 HTML 代码中未发现 hreflang 标签。这会导致搜索引擎无法识别不同语言版本的对应关系，可能产生重复内容问题或向用户展示错误的语言版本。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在 <head> 中添加 hreflang 标签，例如 <link rel='alternate' hreflang='zh-CN' href='...zh-CN' /> 和默认的 <link rel='alternate' hreflang='x-default' ... />，并确保各语言版本相互指向。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">存在渲染阻塞的外部 CSS 资源</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面引用了 cdnjs 上的 meyer-reset、typicons 以及 Google Fonts 外部 CSS。这些资源在加载完成前会阻塞页面的首次渲染，增加 FCP 时间。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>考虑将基础 reset CSS 内联到项目中，评估是否真的需要完整的 typicons 库（可按需引入 SVG）。对于 Google Fonts，建议使用 next/font 组件进行本地字体优化，消除外部网络请求。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺少结构化数据 (Schema Markup)</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>作为 Solana 链发币工具平台，页面未使用任何 JSON-LD 结构化数据，错失了在搜索结果中展示富媒体摘要的机会，也未能向搜索引擎明确产品的功能属性。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>添加 SoftwareApplication 或 WebApplication 类型的 JSON-LD 结构化数据，包含应用名称、操作系统、应用类别和价格等信息，增强搜索结果展现。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">页面文本内容单薄，缺乏 SEO 支撑</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面主要是交互表单，纯文本内容极少，缺乏对'Solana发币'、'SPL代币'等相关概念的解读和教程。这导致页面很难在搜索引擎中获得长尾词排名。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在页面底部或独立板块增加 SEO 友好的引导内容，如：Solana 发币的优势、什么是 SPL 代币、如何添加流动性等，既教育用户又增加关键词密度。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card medium">
+            <div class="issue-header">
+                <div class="issue-title">缺少明确的行动号召 (CTA)</div>
+                <div class="badges">
+                    <span class="badge badge-priority medium">MEDIUM</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面虽然有表单，但缺少视觉冲击力强的 CTA 按钮文案引导（如'立即创建代币'、'一键发币'），用户可能不清楚下一步操作。底部仅有一个交流群链接，转化路径不清晰。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>在表单区域增加醒目的 CTA 按钮，使用动词驱动的文案，如'立即部署合约'、'一键生成代币'，并在页面首屏增加快速跳转到表单的锚点按钮。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">Keywords Meta 标签设置不当</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>页面的 keywords 标签内容与 description 完全相同，是一句完整的长句。主流搜索引擎早已不看重 keywords 标签，这样设置不仅无益，反而显得不够专业。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>可以直接移除 keywords meta 标签以减少代码冗余，或者将其修改为 3-5 个核心短词（如：Solana发币,SPL代币工具,Solana链创建代币），用逗号分隔。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">Logo 图片缺少 Alt 替代文本</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>导航栏中的 Logo 图片 <img src='/images/logo.gif' alt=''/> 的 alt 属性为空，不利于搜索引擎理解图片内容，也影响使用屏幕阅读器的无障碍访问体验。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>为 Logo 图片添加描述性 alt 文本，例如 alt='GTokenTool Solana 发币平台'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">Viewport Meta 标签配置不完整</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">TECHNICAL</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>viewport 标签仅设置了 width=device-width，缺少 initial-scale=1.0。在部分移动设备或横竖屏切换时，可能会导致页面默认缩放异常，影响移动端友好性。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>将 viewport 标签修改为标准格式：content='width=device-width, initial-scale=1.0'。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">Description 标点符号及吸引力可优化</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>Description 以感叹号结尾，且文案较为基础（'让发币变得更简单、快速和安全!'），在搜索结果中缺乏差异化吸引力，未能完全展示价值主张。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>优化 Description 为更具独特卖点的文案，例如：'使用 GTokenTool 在 Solana 链上一键发行 SPL 代币，0 代码基础，极低手续费，合约安全开源，5 分钟快速部署。' 并使用规范的标点符号。</p>
+            </div>
+        </div>
+        
+        <div class="issue-card low">
+            <div class="issue-header">
+                <div class="issue-title">图片 Alt 文本可能缺失或不规范</div>
+                <div class="badges">
+                    <span class="badge badge-priority low">LOW</span>
+                    <span class="badge badge-category">CONTENT</span>
+                </div>
+            </div>
+            <div class="issue-section">
+                <h4>问题描述</h4>
+                <p>从页面文本中看到有 'Upload Image' 等交互，但未见明确的图片 Alt 属性描述。对于 Logo、功能图标等，缺少 Alt 文本不仅影响可访问性，也错失了图片搜索 SEO 的机会。</p>
+            </div>
+            <div class="issue-section">
+                <h4>优化建议</h4>
+                <p>检查并确保页面所有功能性图片和展示图片都有描述性的 Alt 文本，例如：alt='Solana 代币 Logo 上传区域'，alt='GTokenTool 官网 Logo'。</p>
+            </div>
+        </div>
+        
+
+        <footer>
+            <p>由 SEO 审计平台自动生成 | Powered by AI</p>
+        </footer>
+    </div>
+</body>
+</html>
